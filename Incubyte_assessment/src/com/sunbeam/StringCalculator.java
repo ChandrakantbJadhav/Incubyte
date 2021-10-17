@@ -2,9 +2,15 @@ package com.sunbeam;
 
 import java.util.ArrayList;
 
+class InvalidException extends Exception {
+	public InvalidException(String message) {
+		super(message);
+	}
+}
+
 public class StringCalculator {
 
-	public static int add(String numbers) {
+	public static int add(String numbers) throws InvalidException {
 		if (numbers.length() == 0)
 			return 0;
 		ArrayList<String> list = new ArrayList<>();
@@ -20,6 +26,8 @@ public class StringCalculator {
 				str = "";
 			}
 		}
+		if (numbers.length() > 1 && numbers.substring(numbers.length() - 1).equals("\n"))
+			throw new InvalidException("Invalid Input");
 		if (str.length() > 0)
 			list.add(str);
 		int sum = 0;
@@ -30,11 +38,16 @@ public class StringCalculator {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(add("1,2"));
-		System.out.println(add("1,2 ,3"));
-		System.out.println(add("1,2 , 3,4 ,5"));
-		System.out.println(add("1"));
+		try {
+			// System.out.println(add("1,2"));
+//		System.out.println(add("1,2 ,3"));
+//		System.out.println(add("1,2 , 3,4 ,5"));
+//		System.out.println(add("1"));
+			System.out.println(add("1\n2,3\n"));
+		} catch (InvalidException e) {
+			System.out.println(e.getMessage());
+		}
+
 	}
 
 }
-

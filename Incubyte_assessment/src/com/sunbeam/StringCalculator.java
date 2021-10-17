@@ -70,6 +70,7 @@ public class StringCalculator {
 //			System.out.println(add("-1\n2****;,-3"));
 //			System.out.println(add("-1\n2*-4***;,-3"));
 			System.out.println(getCount());
+			System.out.println(add("//[***]\\n1***2***3"));
 		} catch (InvalidException e) {
 			System.out.println(e.getMessage());
 		} catch (NegativeNumberException e) {

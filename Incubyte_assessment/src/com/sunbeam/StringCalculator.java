@@ -72,6 +72,7 @@ public class StringCalculator {
 			System.out.println(getCount());
 			System.out.println(add("//[***]\\n1***2***3"));
 			System.out.println(add("//[*][%]\\n1*2%3”"));
+			System.out.println(add("//[**][%%]\\n1**2%%3”"));
 		} catch (InvalidException e) {
 			System.out.println(e.getMessage());
 		} catch (NegativeNumberException e) {

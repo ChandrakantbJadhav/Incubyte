@@ -15,8 +15,15 @@ class NegativeNumberException extends Exception{
 }
 
 public class StringCalculator {
+	private static int count=0;
+	
+	public static int getCount()
+	{
+		return count;
+	}
 
 	public static int add(String numbers) throws InvalidException, NegativeNumberException {
+		count++;
 		if (numbers.length() == 0)
 			return 0;
 		ArrayList<String> list = new ArrayList<>();
@@ -55,9 +62,10 @@ public class StringCalculator {
 //		System.out.println(add("1"));
 			System.out.println(add("1\n2,3"));
 			System.out.println(add("1\n2**-**;,3"));
-			System.out.println(add("1\n2****;,-3"));
-			System.out.println(add("-1\n2****;,-3"));
-			System.out.println(add("-1\n2*-4***;,-3"));
+//			System.out.println(add("1\n2****;,-3"));
+//			System.out.println(add("-1\n2****;,-3"));
+//			System.out.println(add("-1\n2*-4***;,-3"));
+			System.out.println(getCount());
 		} catch (InvalidException e) {
 			System.out.println(e.getMessage());
 		} catch (NegativeNumberException e) {

@@ -48,8 +48,12 @@ public class StringCalculator {
 		if (str.length() > 0)
 			list.add(str);
 		int sum = 0;
-		for (int i = 0; i < list.size(); i++)
-			sum += Integer.parseInt(list.get(i));
+		for (int i = 0; i < list.size(); i++) {
+			 if(list.get(i).equals("1000")||list.get(i).length()<4){
+                 //  System.out.println(list.get(i));
+                sum+=Integer.parseInt(list.get(i));
+             }			
+		}
 		return sum;
 
 	}
@@ -61,7 +65,7 @@ public class StringCalculator {
 //		System.out.println(add("1,2 , 3,4 ,5"));
 //		System.out.println(add("1"));
 			System.out.println(add("1\n2,3"));
-			System.out.println(add("1\n2**-**;,3"));
+			System.out.println(add("1\n2**1001-**;,3"));
 //			System.out.println(add("1\n2****;,-3"));
 //			System.out.println(add("-1\n2****;,-3"));
 //			System.out.println(add("-1\n2*-4***;,-3"));
